@@ -93,3 +93,29 @@ textarea {
   color: #555;
   line-height: 1.5;
 }
+
+.post button {
+  padding: 6px 12px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-size: 0.9em;
+}
+
+.post button.edit {
+  background-color: #2ecc71; /* Green */
+}
+
+.post button.edit:hover {
+  background-color: #27ae60;
+}
+
+.post button.delete {
+  background-color: #e74c3c; /* Red */
+}
+
+.post button.delete:hover {
+  background-color: #c0392b;
+}
