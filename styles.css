@@ -71,3 +71,25 @@ textarea {
   font-family: inherit;
   font-size: 1em;
 }
+
+#postsContainer {
+  margin-top: 30px;
+}
+
+.post {
+  background-color: #f9f9f9;
+  border-left: 4px solid #3498db;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.post h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.post p {
+  color: #555;
+  line-height: 1.5;
+}
