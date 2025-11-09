@@ -49,3 +49,37 @@ function renderPosts() {
     postsList.appendChild(postDiv);
   });
 }
+
+postForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  titleError.textContent = '';
+  contentError.textContent = '';
+
+  let isValid = true;
+
+  if (postTitle.value.trim() === '') {
+    titleError.textContent = 'Title is required.';
+    isValid = false;
+  }
+
+  if (postContent.value.trim() === '') {
+    contentError.textContent = 'Content is required.';
+    isValid = false;
+  }
+
+  if (!isValid) return;
+
+  const newPost = {
+    title: postTitle.value.trim(),
+    content: postContent.value.trim()
+  };
+
+  posts.push(newPost);
+
+  localStorage.setItem('blogPosts', JSON.stringify(posts));
+
+  renderPosts();
+
+  postForm.reset();
+});
