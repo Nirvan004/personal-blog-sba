@@ -1,5 +1,5 @@
 let posts = [];
-
+let editIndex = null;
 const postForm = document.getElementById('postForm');
 const postTitle = document.getElementById('postTitle');
 const postContent = document.getElementById('postContent');
@@ -20,10 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderPosts() {
   postsList.innerHTML = '';
 
-  posts.forEach(post => {
+  posts.forEach((post, index) => {
     const postDiv = document.createElement('div');
     postDiv.classList.add('post');
-    postDiv.setAttribute('data-id', post.id);
 
     const postTitleEl = document.createElement('h3');
     postTitleEl.textContent = post.title;
