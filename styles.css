@@ -61,3 +61,13 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #2980b9;
 }
+
+textarea {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1em;
+}
