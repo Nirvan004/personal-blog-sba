@@ -34,12 +34,21 @@ function renderPosts() {
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
     editBtn.classList.add('edit');
-    editBtn.setAttribute('data-id', post.id);
+    editBtn.addEventListener('click', () => {
+      postTitle.value = post.title;
+      postContent.value = post.content;
+      editIndex = index;
+      postForm.querySelector('button[type="submit"]').textContent = 'Update Post';
+    });
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.classList.add('delete');
-    deleteBtn.setAttribute('data-id', post.id);
+    deleteBtn.addEventListener('click', () => {
+      posts.splice(index, 1);
+      localStorage.setItem('blogPosts', JSON.stringify(posts));
+      renderPosts();
+    });
 
     postDiv.appendChild(postTitleEl);
     postDiv.appendChild(postContentEl);
